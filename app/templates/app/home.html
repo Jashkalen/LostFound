@@ -1,0 +1,72 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block content %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+
+    <style>
+ body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background: #35424a;
+            color: #ffffff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        h1 {
+            margin: 0;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px 0;
+            background: #35424a;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .button:hover {
+            background:  #007bff;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #35424a;
+            color: #ffffff;
+            position: fixed;
+            bottom: 0;
+            width: 98%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Lost and Found System</h1>
+    </header>
+    <div class="container">
+        <h2>Welcome to the Lost and Found System</h2>
+        <p>Have you lost something? Or have you found something that someone else may be looking for? Use our system to report lost and found items.</p>
+        <a href="{% url 'item_create' %}" class="button">Report a Lost Item</a>
+
+    </div>
+    <footer>
+        <p>&copy; 2025 Lost and Found System</p>
+    </footer>
+</body>
+</html>
+
+{% endblock content %}
+

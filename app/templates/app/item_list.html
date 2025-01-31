@@ -1,0 +1,42 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block content %}
+ <a href="{% url 'item_create' %}">+ New Item Post</a>
+
+    <table>
+    <thead>
+    <tr>
+        <th>Type</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Location</th>
+        <th>Date</th>
+        <th>Image</th>
+        <th>Contact Email</th>
+        <th>Added by</th>
+        <th>View</th>
+        <th>Update</th>
+        <th>Delete</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for item in item %}
+    <tr>
+        <td>{{ item.type }}</td>
+        <td>{{ item.title }}</td>
+        <td>{{ item.description }}</td>
+        <td>{{ item.location }}</td>
+        <td>{{ item.date }}</td>
+        <td>{{ item.image }}</td>
+        <td>{{ item.contact_email }}</td>
+        <td>{{ item.user }}</td>
+       <td><a href="{% url 'item_detail' item.pk %}">View</a></td>
+        <td><a href="{% url 'item_update' item.pk %}">Update</a></td>
+        <td><a href="{% url 'item_delete' item.pk %}">Delete</a></td>
+
+    </tr>
+    {% endfor %}
+    </tbody>
+    </table>
+
+{% endblock content %}
